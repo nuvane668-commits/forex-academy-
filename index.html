@@ -29,6 +29,7 @@ nav a{color:#fff;text-decoration:none;font-size:14px}
 footer{background:#101820;color:#ccc;text-align:center;padding:35px 18px}
 @media(max-width:650px){.hero h1{font-size:31px}nav{gap:8px}.container{padding:30px 14px}}
 </style>
+<script src="progress.js"></script>
 </head>
 <body>
 <header>
@@ -53,6 +54,14 @@ footer{background:#101820;color:#ccc;text-align:center;padding:35px 18px}
 
 <main>
 <div class="container">
+<div class="card" style="margin-bottom:25px;text-align:center;">
+<h2>🎓 Your Learning Progress</h2>
+<p><strong id="progressPercentage">0%</strong> completed</p>
+<div style="background:#e9ecef;border-radius:20px;height:14px;overflow:hidden;">
+<div id="progressBar" style="width:0%;height:100%;background:#00a86b;transition:width .4s;"></div>
+</div>
+<p style="font-size:14px;color:#666;">Complete lessons to track your progress on this device.</p>
+</div>
 
 <div class="ad">Advertisement</div>
 
