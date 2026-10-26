@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy Builder | Forex Academy</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}header{background:#101820;color:white;padding:18px}.nav,main{max-width:900px;margin:auto}.nav{display:flex;justify-content:space-between}.nav a{color:white}main{padding:30px 18px}.panel{background:white;padding:25px;border-radius:12px;margin-bottom:20px}label{display:block;font-weight:bold;margin-top:15px}input,textarea,select{width:100%;padding:12px;margin-top:7px;border:1px solid #ccc;border-radius:7px}button{margin-top:20px;padding:13px 18px;background:#087f5b;color:white;border:0;border-radius:7px;font-weight:bold}.output{margin-top:20px;background:#eef2f5;padding:20px;border-radius:8px;white-space:pre-wrap}
+</style></head>
+<body>
+<header><div class="nav"><strong>Forex Academy</strong><a href="index.html">Home</a></div></header>
+<main>
+<div class="panel">
+<h1>🧩 Strategy Builder</h1>
+<p>A strategy should contain objective rules that can be tested. Avoid rules such as “buy when the chart looks good.”</p>
+<label>Strategy name</label><input id="name" placeholder="Example: London Pullback">
+<label>Market/pairs</label><input id="market" placeholder="Example: EUR/USD">
+<label>Timeframe</label><select id="tf"><option>15 minutes</option><option>1 hour</option><option>4 hours</option><option>Daily</option></select>
+<label>Trend condition</label><textarea id="trend" placeholder="What must the market structure look like?"></textarea>
+<label>Entry condition</label><textarea id="entry" placeholder="What exact conditions must happen before entry?"></textarea>
+<label>Stop-loss rule</label><textarea id="stop" placeholder="Where is the trade invalidated?"></textarea>
+<label>Take-profit rule</label><textarea id="tp" placeholder="How is the target determined?"></textarea>
+<label>Risk rule</label><textarea id="risk" placeholder="Maximum planned risk per trade?"></textarea>
+<label>No-trade conditions</label><textarea id="avoid" placeholder="When will you refuse to trade?"></textarea>
+<button onclick="build()">Create Strategy</button>
+<div id="output" class="output" style="display:none"></div>
+</div>
+<div class="panel"><h2>Test before trusting it</h2><p>A strategy should be tested on historical data or in a demo environment before risking real money. Track enough trades to understand its behavior rather than judging it from a handful of wins or losses.</p></div>
+</main>
+<script>
+function build(){
+let g=id=>document.getElementById(id).value.trim();
+let out=`STRATEGY: ${g("name")||"Untitled"}\n\nMARKET: ${g("market")}\nTIMEFRAME: ${g("tf")}\n\nTREND:\n${g("trend")}\n\nENTRY:\n${g("entry")}\n\nSTOP LOSS:\n${g("stop")}\n\nTAKE PROFIT:\n${g("tp")}\n\nRISK:\n${g("risk")}\n\nNO-TRADE CONDITIONS:\n${g("avoid")}`;
+let o=document.getElementById("output");o.style.display="block";o.textContent=out;
+localStorage.setItem("forexStrategy",out)
+}
+</script>
+</body></html>

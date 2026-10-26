@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trading Journal | Forex Academy</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}header{background:#101820;color:white;padding:18px}.nav,main{max-width:900px;margin:auto}.nav{display:flex;justify-content:space-between}.nav a{color:white}main{padding:30px 18px}.panel{background:white;padding:25px;border-radius:12px}label{display:block;font-weight:bold;margin-top:14px}input,textarea,select{width:100%;padding:12px;margin-top:7px;border:1px solid #ccc;border-radius:7px}button{margin-top:18px;padding:12px 18px;background:#172a3a;color:white;border:0;border-radius:7px;font-weight:bold}.trade{background:#eef2f5;padding:15px;border-radius:8px;margin-top:12px}.danger{background:#c92a2a}
+</style></head>
+<body>
+<header><div class="nav"><strong>Forex Academy</strong><a href="index.html">Home</a></div></header>
+<main>
+<div class="panel">
+<h1>📒 Trading Journal</h1>
+<p>Record practice trades and, most importantly, record why you made the decision.</p>
+<label>Pair</label><input id="pair" placeholder="EUR/USD">
+<label>Direction</label><select id="direction"><option>BUY</option><option>SELL</option></select>
+<label>Entry</label><input id="entry" placeholder="Entry price">
+<label>Stop Loss</label><input id="stop" placeholder="Stop price">
+<label>Target</label><input id="target" placeholder="Target price">
+<label>Reason for trade</label><textarea id="reason" placeholder="What conditions did you identify?"></textarea>
+<label>Lesson learned</label><textarea id="lesson" placeholder="What did you learn?"></textarea>
+<button onclick="save()">Save Practice Trade</button>
+<button class="danger" onclick="clearAll()">Clear Journal</button>
+<div id="list"></div>
+</div>
+</main>
+<script>
+let trades=JSON.parse(localStorage.getItem("forexJournal")||"[]");
+function save(){let g=id=>document.getElementById(id).value.trim();trades.unshift({pair:g("pair"),direction:g("direction"),entry:g("entry"),stop:g("stop"),target:g("target"),reason:g("reason"),lesson:g("lesson"),date:new Date().toLocaleString()});localStorage.setItem("forexJournal",JSON.stringify(trades));render()}
+function render(){document.getElementById("list").innerHTML=trades.length?trades.map((t,i)=>`<div class="trade"><strong>${t.direction} ${t.pair}</strong><br>Entry: ${t.entry} | SL: ${t.stop} | TP: ${t.target}<br><small>${t.date}</small><p><strong>Reason:</strong> ${t.reason}</p><p><strong>Lesson:</strong> ${t.lesson}</p></div>`).join(""):"<p>No journal entries yet.</p>"}
+function clearAll(){if(confirm("Clear the practice journal?")){trades=[];localStorage.removeItem("forexJournal");render()}}
+render()
+</script>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practice Lab | Forex Academy</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
+header{background:#101820;color:white;padding:18px}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between}.nav a{color:white}
+main{max-width:1100px;margin:auto;padding:25px 15px}.hero,.panel{background:white;padding:25px;border-radius:12px;margin-bottom:20px}
+.hero{background:#172a3a;color:white}
+canvas{width:100%;height:520px;background:#111820;border-radius:10px;cursor:crosshair}
+button{padding:11px 14px;margin:5px;border:0;border-radius:7px;background:#172a3a;color:white;font-weight:bold}
+button.active{outline:3px solid #ffd43b}.clear{background:#c92a2a}
+.result{padding:15px;background:#eef2f5;border-radius:8px;margin-top:15px}
+</style></head>
+<body>
+<header><div class="nav"><strong>Forex Academy</strong><a href="index.html">← Home</a></div></header>
+<main>
+<section class="hero"><h1>🎯 Practice Lab</h1><p>Practice marking important areas on a simulated market chart.</p></section>
+<section class="panel">
+<canvas id="chart"></canvas>
+<div>
+<button onclick="tool='support';active(this)">🟦 Support</button>
+<button onclick="tool='resistance';active(this)">🟥 Resistance</button>
+<button onclick="tool='entry';active(this)">🟢 Entry</button>
+<button onclick="tool='stop';active(this)">🛑 Stop Loss</button>
+<button onclick="tool='target';active(this)">🎯 Take Profit</button>
+<button class="clear" onclick="reset()">Clear</button>
+</div>
+<div id="result" class="result">Choose a tool and click the chart.</div>
+</section>
+<section class="panel">
+<h2>How to practice</h2>
+<ol><li>Identify the general direction.</li><li>Find important reaction zones.</li><li>Mark support and resistance.</li><li>Choose a hypothetical entry only after your conditions are met.</li><li>Mark invalidation/stop and target.</li><li>Explain your reasoning in your journal.</li></ol>
+</section>
+</main>
+<script>
+const c=document.getElementById("chart"),x=c.getContext("2d");let tool=null,marks=[];
+function size(){c.width=c.clientWidth*devicePixelRatio;c.height=c.clientHeight*devicePixelRatio;x.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);draw()}
+let p=[],v=100;for(let i=0;i<100;i++){v+=(Math.random()-.47)*2.2;p.push(v)}
+function draw(){
+let w=c.clientWidth,h=c.clientHeight;x.clearRect(0,0,w,h);
+let min=Math.min(...p)-2,max=Math.max(...p)+2;
+x.strokeStyle="#2c3942";x.lineWidth=1;
+for(let i=1;i<6;i++){let y=h*i/6;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke()}
+let cw=w/p.length;
+for(let i=0;i<p.length;i++){
+let open=i?p[i-1]:p[i],close=p[i],high=Math.max(open,close)+Math.random(),low=Math.min(open,close)-Math.random();
+let yo=h-(open-min)/(max-min)*h,yc=h-(close-min)/(max-min)*h,yh=h-(high-min)/(max-min)*h,yl=h-(low-min)/(max-min)*h;
+x.strokeStyle=close>=open?"#4dabf7":"#ff8787";x.fillStyle=x.strokeStyle;
+x.beginPath();x.moveTo(i*cw+cw/2,yh);x.lineTo(i*cw+cw/2,yl);x.stroke();
+let top=Math.min(yo,yc),bh=Math.max(2,Math.abs(yc-yo));x.fillRect(i*cw+2,top,cw-4,bh)
+}
+marks.forEach(m=>{x.strokeStyle=m.color;x.lineWidth=3;x.beginPath();x.moveTo(0,m.y);x.lineTo(w,m.y);x.stroke();x.fillStyle=m.color;x.font="bold 13px Arial";x.fillText(m.label,10,m.y-8)})
+}
+function active(b){document.querySelectorAll("button").forEach(q=>q.classList.remove("active"));b.classList.add("active");document.getElementById("result").textContent="Click the chart to place "+tool+"."}
+c.onclick=e=>{if(!tool)return;let r=c.getBoundingClientRect(),y=e.clientY-r.top,info={support:["SUPPORT","#4dabf7"],resistance:["RESISTANCE","#ff8787"],entry:["ENTRY","#51cf66"],stop:["STOP LOSS","#ff6b6b"],target:["TAKE PROFIT","#ffd43b"]}[tool];marks.push({y,label:info[0],color:info[1]});draw();document.getElementById("result").textContent=info[0]+" marked. Now consider why this location matters."}
+function reset(){marks=[];tool=null;document.querySelectorAll("button").forEach(q=>q.classList.remove("active"));document.getElementById("result").textContent="Choose a tool and click the chart.";draw()}
+addEventListener("resize",size);size();
+</script>
+</body></html>
