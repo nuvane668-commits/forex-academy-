@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Forex Academy Chart Marking - Learn market structure, BOS, CHOCH, FVG, liquidity, order blocks and premium and discount.">
+<title>Chart Marking Academy | Forex Academy</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+color:#17202a;
+line-height:1.6
+}
+
+header{
+background:#101820;
+color:white;
+position:sticky;
+top:0;
+z-index:20
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:15px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px
+}
+
+.logo{font-weight:800;font-size:21px}
+
+nav{
+display:flex;
+gap:15px;
+flex-wrap:wrap
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px
+}
+
+.hero{
+background:#172a3a;
+color:white;
+padding:55px 20px;
+text-align:center
+}
+
+.hero h1{
+font-size:40px;
+margin:0 0 12px
+}
+
+.hero p{
+max-width:750px;
+margin:auto;
+color:#dce5eb
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:40px 18px
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:12px;
+box-shadow:0 3px 15px rgba(0,0,0,.07);
+margin-bottom:22px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px
+}
+
+.tag{
+display:inline-block;
+padding:5px 9px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+background:#e7f7f0;
+color:#087f5b
+}
+
+.chart{
+background:#111820;
+border-radius:12px;
+padding:10px;
+overflow:hidden;
+margin:20px 0
+}
+
+.chart svg{
+width:100%;
+height:auto;
+display:block
+}
+
+.example{
+border-left:4px solid #00a86b;
+padding-left:16px;
+margin:20px 0
+}
+
+.warning{
+background:#fff3cd;
+padding:20px;
+border-radius:10px;
+margin-top:30px
+}
+
+footer{
+background:#101820;
+color:#ccc;
+text-align:center;
+padding:35px 18px;
+margin-top:30px
+}
+
+.btn{
+display:inline-block;
+background:#00a86b;
+color:white;
+padding:12px 18px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold
+}
+
+@media(max-width:650px){
+.hero h1{font-size:31px}
+.container{padding:28px 14px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">Forex Academy</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="forex.html">Lessons</a>
+<a href="training.html">Training</a>
+<a href="practice.html">Practice</a>
+<a href="strategy.html">Strategy</a>
+<a href="journal.html">Journal</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<span class="tag">CHART ANALYSIS</span>
+<h1>Chart Marking Academy</h1>
+<p>
+Learn how to turn a raw price chart into a structured analysis.
+Identify market structure, BOS, CHOCH, FVG, liquidity and other
+price-action concepts using clear rules instead of guessing.
+</p>
+</section>
+
+<main>
+<div class="container">
+
+<div class="card">
+<h2>🎯 The Goal</h2>
+<p>
+Chart marking is not about covering a chart with dozens of lines.
+The objective is to identify the few pieces of information that
+actually matter to your trading plan.
+</p>
+
+<div class="example">
+<strong>Our analysis sequence:</strong><br>
+Context → Structure → Liquidity → Location → Trigger → Risk → Entry
+</div>
+</div>
+
+<div class="card">
+<h2>1. Market Structure</h2>
+
+<p>
+Market structure describes how price is moving from one swing to
+another.
+</p>
+
+<div class="grid">
+<div>
+<strong>HH</strong><br>
+Higher High — price creates a high above the previous significant high.
+</div>
+
+<div>
+<strong>HL</strong><br>
+Higher Low — price holds above the previous significant low.
+</div>
+
+<div>
+<strong>LH</strong><br>
+Lower High — price fails to create a higher high.
+</div>
+
+<div>
+<strong>LL</strong><br>
+Lower Low — price creates a low below the previous significant low.
+</div>
+</div>
+
+<div class="chart">
+<svg viewBox="0 0 900 360">
+
+<rect width="900" height="360" fill="#111820"/>
+
+<g stroke="#26333d" stroke-width="1">
+<path d="M0 60H900M0 120H900M0 180H900M0 240H900M0 300H900"/>
+<path d="M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360M700 0V360M800 0V360"/>
+</g>
+
+<polyline
+points="40,285 130,210 220,245 315,150 405,190 500,95 590,135 685,55 780,100 865,35"
+fill="none"
+stroke="#35c98a"
+stroke-width="5"/>
+
+<circle cx="130" cy="210" r="7" fill="#35c98a"/>
+<circle cx="315" cy="150" r="7" fill="#35c98a"/>
+<circle cx="500" cy="95" r="7" fill="#35c98a"/>
+<circle cx="685" cy="55" r="7" fill="#35c98a"/>
+
+<text x="110" y="195" fill="white" font-size="18">HH</text>
+<text x="300" y="135" fill="white" font-size="18">HH</text>
+<text x="485" y="80" fill="white" font-size="18">HH</text>
+<text x="670" y="40" fill="white" font-size="18">HH</text>
+
+<text x="205" y="270" fill="#f0b429" font-size="18">HL</text>
+<text x="395" y="215" fill="#f0b429" font-size="18">HL</text>
+<text x="580" y="160" fill="#f0b429" font-size="18">HL</text>
+
+</svg>
+</div>
+
+<p>
+Notice the sequence: <strong>HH → HL → HH → HL</strong>.
+That describes an example of bullish structure.
+</p>
+</div>
+
+<div class="card">
+<h2>2. BOS — Break of Structure</h2>
+
+<p>
+A Break of Structure is a structural break that can indicate price
+has continued in the direction of the existing structure.
+</p>
+
+<div class="chart">
+<svg viewBox="0 0 900 300">
+
+<rect width="900" height="300" fill="#111820"/>
+
+<polyline
+points="40,230 150,170 260,205 370,130 480,165 590,75 700,105 850,45"
+fill="none"
+stroke="#35c98a"
+stroke-width="5"/>
+
+<line x1="450" y1="165" x2="850" y2="165"
+stroke="#f0b429"
+stroke-width="2"
+stroke-dasharray="8 8"/>
+
+<text x="455" y="155" fill="#f0b429" font-size="17">
+Previous swing high
+</text>
+
+<text x="650" y="135" fill="#35c98a" font-size="22">
+BOS ↑
+</text>
+
+</svg>
+</div>
+
+<p>
+When marking BOS, first identify the relevant swing point. Then
+determine whether price has actually broken the level according to
+your chosen rules.
+</p>
+
+<div class="example">
+<strong>Important:</strong> A wick through a level does not automatically
+mean that every trader should call it a BOS. Define your confirmation
+rule before using the concept.
+</div>
+</div>
+
+<div class="card">
+<h2>3. CHOCH — Change of Character</h2>
+
+<p>
+CHOCH is commonly used by traders to describe a potential change in
+the character or direction of price structure.
+</p>
+
+<div class="chart">
+<svg viewBox="0 0 900 330">
+
+<rect width="900" height="330" fill="#111820"/>
+
+<polyline
+points="40,70 130,125 220,90 310,155 400,120 490,190 580,155 670,245 760,175 850,120"
+fill="none"
+stroke="#e05b5b"
+stroke-width="5"/>
+
+<line x1="580" y1="155" x2="850" y2="155"
+stroke="#f0b429"
+stroke-width="2"
+stroke-dasharray="8 8"/>
+
+<text x="45" y="55" fill="#e05b5b" font-size="18">Downward structure</text>
+
+<text x="675" y="145" fill="#35c98a" font-size="21">
+Possible CHOCH ↑
+</text>
+
+<text x="585" y="145" fill="#f0b429" font-size="15">
+Structure level
+</text>
+
+</svg>
+</div>
+
+<p>
+The key word is <strong>potential</strong>. A CHOCH is not a guarantee
+that a complete trend reversal will follow. Look for additional
+context and confirmation.
+</p>
+</div>
+
+<div class="card">
+<h2>4. FVG — Fair Value Gap</h2>
+
+<p>
+An FVG is commonly described as an imbalance between candles in a
+three-candle sequence. Traders often mark the area between the
+relevant candle wicks as a zone of interest.
+</p>
+
+<div class="chart">
+<svg viewBox="0 0 900 330">
+
+<rect width="900" height="330" fill="#111820"/>
+
+<!-- Candle 1 -->
+<line x1="270" y1="250" x2="270" y2="115" stroke="#35c98a" stroke-width="3"/>
+<rect x="245" y="155" width="50" height="70" fill="#35c98a"/>
+
+<!-- Candle 2 -->
+<line x1="450" y1="230" x2="450" y2="45" stroke="#35c98a" stroke-width="3"/>
+<rect x="425" y="70" width="50" height="130" fill="#35c98a"/>
+
+<!-- Candle 3 -->
+<line x1="630" y1="125" x2="630" y2="55" stroke="#e05b5b" stroke-width="3"/>
+<rect x="605" y="75" width="50" height="40" fill="#e05b5b"/>
+
+<!-- FVG zone -->
+<rect x="295" y="115" width="310" height="40"
+fill="#f0b429" fill-opacity=".25"
+stroke="#f0b429"
+stroke-width="2"/>
+
+<text x="350" y="105" fill="#f0b429" font-size="19">
+Illustrative FVG zone
+</text>
+
+<text x="235" y="275" fill="white" font-size="15">Candle 1</text>
+<text x="420" y="275" fill="white" font-size="15">Candle 2</text>
+<text x="600" y="145" fill="white" font-size="15">Candle 3</text>
+
+</svg>
+</div>
+
+<p>
+The exact rules used to identify an FVG should be defined in your
+strategy. Not every visually interesting gap is automatically a
+high-quality trade.
+</p>
+</div>
+
+<div class="card">
+<h2>5. Liquidity</h2>
+
+<p>
+Liquidity is often discussed around obvious areas where many traders
+may place stops or pending orders, such as previous highs, previous
+lows and equal highs or lows.
+</p>
+
+<div class="chart">
+<svg viewBox="0 0 900 300">
+
+<rect width="900" height="300" fill="#111820"/>
+
+<line x1="100" y1="90" x2="800" y2="90"
+stroke="#f0b429" stroke-width="3"
+stroke-dasharray="8 8"/>
+
+<text x="110" y="75" fill="#f0b429" font-size="18">
+Equal highs / liquidity area
+</text>
+
+<polyline
+points="40,250 150,160 260,205 370,155 480,205 590,90 650,130 710,45 760,120 850,80"
+fill="none"
+stroke="#35c98a"
+stroke-width="5"/>
+
+<circle cx="590" cy="90" r="7" fill="#35c98a"/>
+<circle cx="710" cy="45" r="7" fill="#35c98a"/>
+
+<text x="625" y="155" fill="#e05b5b" font-size="18">
+Sweep example
+</text>
+
+</svg>
+</div>
+
+<p>
+A liquidity sweep is not automatically a trade signal. It needs to
+be interpreted within the broader market context.
+</p>
+</div>
+
+<div class="card">
+<h2>6. Order Blocks</h2>
+
+<p>
+Order block terminology varies between trading communities. In this
+Academy, we will define the exact rules before asking students to mark
+one.
+</p>
+
+<div class="example">
+<strong>Academy rule:</strong>
+Don't mark an order block simply because a candle looks large or
+interesting. Define the preceding structure, displacement and the
+specific zone you intend to use.
+</div>
+</div>
+
+<div class="card">
+<h2>7. Premium & Discount</h2>
+
+<p>
+Take a clearly defined price range and divide it around the midpoint.
+The upper portion is commonly called premium and the lower portion
+discount.
+</p>
+
+<div class="chart">
+<svg viewBox="0 0 900 260">
+
+<rect width="900" height="260" fill="#111820"/>
+
+<rect x="80" y="35" width="740" height="90"
+fill="#e05b5b" fill-opacity=".18"/>
+
+<rect x="80" y="125" width="740" height="95"
+fill="#35c98a" fill-opacity=".18"/>
+
+<line x1="80" y1="125" x2="820" y2="125"
+stroke="#f0b429" stroke-width="3"/>
+
+<text x="100" y="70" fill="#e05b5b" font-size="20">
+PREMIUM
+</text>
+
+<text x="100" y="110" fill="#ddd" font-size="14">
+Upper part of defined range
+</text>
+
+<text x="100" y="165" fill="#35c98a" font-size="20">
+DISCOUNT
+</text>
+
+<text x="100" y="205" fill="#ddd" font-size="14">
+Lower part of defined range
+</text>
+
+<text x="650" y="120" fill="#f0b429" font-size="16">
+50% equilibrium
+</text>
+
+</svg>
+</div>
+</div>
+
+<div class="card">
+<h2>🧩 Put Everything Together</h2>
+
+<p>
+Professional chart analysis is not about finding one magic concept.
+It is about building a logical chain of evidence.
+</p>
+
+<div class="grid">
+
+<div>
+<strong>1. Context</strong>
+<p>What is the broader market environment?</p>
+</div>
+
+<div>
+<strong>2. Structure</strong>
+<p>HH, HL, LH, LL, range or transition?</p>
+</div>
+
+<div>
+<strong>3. Liquidity</strong>
+<p>Where are important highs and lows?</p>
+</div>
+
+<div>
+<strong>4. Location</strong>
+<p>Is price at an area relevant to the plan?</p>
+</div>
+
+<div>
+<strong>5. Trigger</strong>
+<p>What specific event confirms the idea?</p>
+</div>
+
+<div>
+<strong>6. Risk</strong>
+<p>Where is the idea invalidated?</p>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>🎯 Your First Chart-Marking Exercise</h2>
+
+<p>
+Open the Practice Lab and try to identify the following before looking
+for an entry:
+</p>
+
+<ol>
+<li>Current market structure</li>
+<li>The most important recent swing high and swing low</li>
+<li>Any obvious liquidity area</li>
+<li>A possible BOS or CHOCH</li>
+<li>Any clearly defined FVG</li>
+<li>Where your trade idea becomes invalid</li>
+</ol>
+
+<a class="btn" href="practice.html">Open Practice Lab →</a>
+</div>
+
+<div class="warning">
+<strong>⚠️ Educational warning</strong>
+<p>
+These chart examples are simplified educational illustrations.
+BOS, CHOCH, FVG, liquidity and order-block concepts are interpreted
+differently by traders and do not guarantee profitable trades.
+Always test a clearly defined method with historical or demo data
+before risking real money.
+</p>
+</div>
+
+</div>
+</main>
+
+<footer>
+<p><strong>Forex Academy</strong></p>
+<p>Created by Immanuel</p>
+<p>Learn • Analyze • Practice • Manage Risk</p>
+<p>© 2026 Forex Academy</p>
+</footer>
+
+</body>
+</html>

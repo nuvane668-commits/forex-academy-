@@ -2,36 +2,579 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Training Zone | Forex Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forex Academy | Lessons</title>
+
+<meta name="description" content="Forex Academy lessons by Immanuel.">
+
 <style>
-body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
-header{background:#101820;color:white;padding:18px}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between}.nav a{color:white}
-main{max-width:1100px;margin:auto;padding:25px 15px}.hero,.panel{background:white;padding:25px;border-radius:12px;margin-bottom:22px;box-shadow:0 3px 15px rgba(0,0,0,.07)}
-.hero{background:#172a3a;color:white}.hero p{color:#dce5eb}
-.chart{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 15px rgba(0,0,0,.1)}
-iframe{width:100%;height:600px;border:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.box{padding:18px;background:#f1f4f6;border-radius:8px}
-.ad{min-height:90px;background:#eef1f4;border:1px dashed #adb5bd;display:flex;align-items:center;justify-content:center;color:#777;margin:22px 0;border-radius:8px}
-.warning{background:#fff3cd;padding:18px;border-radius:8px}
-</style></head>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#071018;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    background:#08131c;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#f5c542;
+}
+
+.home{
+    color:#aebbc4;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.home:hover{
+    color:#f5c542;
+}
+
+/* PAGE INTRO */
+
+.hero{
+    padding:65px 20px 45px;
+    text-align:center;
+
+    background:
+    radial-gradient(circle at center,#183449 0%,#0b1822 45%,#071018 80%);
+}
+
+.hero-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+
+    border:1px solid rgba(245,197,66,.35);
+    border-radius:30px;
+
+    color:#f5c542;
+
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1.4px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(34px,6vw,52px);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#f5c542;
+}
+
+.hero p{
+    color:#aebbc4;
+    max-width:650px;
+    margin:auto;
+}
+
+/* LESSON AREA */
+
+.lessons{
+    max-width:1100px;
+    margin:auto;
+    padding:45px 20px 70px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:29px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#84939d;
+    font-size:14px;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:#0d1b25;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    padding:25px;
+
+    transition:.2s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(245,197,66,.35);
+}
+
+.number{
+    color:#f5c542;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#91a0aa;
+    font-size:14px;
+    margin-bottom:22px;
+    flex:1;
+}
+
+.lesson-btn{
+    display:block;
+
+    text-align:center;
+
+    padding:11px 15px;
+
+    border-radius:8px;
+
+    background:#152733;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:bold;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.2s;
+}
+
+.lesson-btn:hover{
+    background:#f5c542;
+    color:#071018;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050c12;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    color:#73818b;
+
+    font-size:13px;
+}
+
+footer strong{
+    color:#f5c542;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    .nav{
+        padding:16px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .hero{
+        padding:55px 18px 40px;
+    }
+
+    .lessons{
+        padding:35px 15px 55px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
 <body>
-<header><div class="nav"><strong>Forex Academy</strong><a href="index.html">← Home</a></div></header>
-<main>
-<section class="hero"><h1>📊 Training Zone</h1><p>Study a live market chart and apply the analysis process you learned in the lessons.</p></section>
-<div class="chart"><iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_chart&symbol=FX%3AEURUSD&interval=60&hidesidetoolbar=0&hidetoptoolbar=0&symboledit=1&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=light&style=1&timezone=Etc%2FUTC" allowtransparency="true" scrolling="no"></iframe></div>
-<div class="ad">Advertisement</div>
-<section class="panel"><h2>🔎 Analysis Process</h2><div class="grid">
-<div class="box"><h3>1. Context</h3><p>Start with the broader timeframe and determine whether the market is trending or ranging.</p></div>
-<div class="box"><h3>2. Structure</h3><p>Mark important highs and lows. Look for higher highs/lows or lower highs/lows.</p></div>
-<div class="box"><h3>3. Levels</h3><p>Identify important support and resistance zones.</p></div>
-<div class="box"><h3>4. Setup</h3><p>Wait for your predefined conditions rather than entering because price simply moved.</p></div>
-<div class="box"><h3>5. Risk</h3><p>Determine invalidation, stop-loss, position size and potential reward before entry.</p></div>
-<div class="box"><h3>6. Execute</h3><p>Only act when every condition in your strategy is satisfied.</p></div>
-</div></section>
-<section class="panel"><h2>🎯 Example BUY Framework</h2><ol><li>Market context is bullish.</li><li>Price approaches a previously identified support zone.</li><li>Your confirmation condition occurs.</li><li>Entry is defined.</li><li>Stop-loss is placed at a logical invalidation point.</li><li>Target is defined before entry.</li><li>Risk is within the strategy's limit.</li></ol></section>
-<section class="panel"><h2>🎯 Example SELL Framework</h2><ol><li>Market context is bearish.</li><li>Price approaches resistance.</li><li>Your confirmation condition occurs.</li><li>Entry is defined.</li><li>Stop-loss is placed at logical invalidation.</li><li>Target is defined.</li><li>Risk remains within the strategy limit.</li></ol></section>
-<section class="panel"><h2>🧠 What Not To Do</h2><div class="grid"><div class="box">❌ Don't chase a move.</div><div class="box">❌ Don't increase risk to recover losses.</div><div class="box">❌ Don't trade without a stop/invalidation plan.</div><div class="box">❌ Don't treat indicators as guaranteed predictions.</div></div></section>
-<div class="warning"><strong>Educational only:</strong> The examples are frameworks for learning, not guaranteed trading signals or personalized financial advice.</div>
-</main>
-</body></html>
+
+
+<header>
+
+<div class="nav">
+
+<a class="logo" href="index.html">
+Forex <span>Academy</span>
+</a>
+
+<a class="home" href="index.html">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+YOUR LEARNING JOURNEY
+</div>
+
+<h1>
+Forex Academy <span>Lessons</span>
+</h1>
+
+<p>
+Learn step by step. Start with the fundamentals,
+build your chart-reading skills, and develop a disciplined
+approach to the market.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="lessons">
+
+<div class="section-title">
+
+<h2>
+Choose a Lesson
+</h2>
+
+<p>
+Work through the academy in order or explore a topic you're ready to learn.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="number">
+LESSON 01
+</div>
+
+<h3>
+Forex Fundamentals
+</h3>
+
+<p>
+Understand what forex is, how the market works,
+and the basic concepts every new trader should know.
+</p>
+
+<a class="lesson-btn" href="lesson-fundamentals.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 02
+</div>
+
+<h3>
+Currency Pairs
+</h3>
+
+<p>
+Learn how currency pairs work and understand
+major, minor and exotic pairs.
+</p>
+
+<a class="lesson-btn" href="lesson-pairs.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 03
+</div>
+
+<h3>
+Candlestick Analysis
+</h3>
+
+<p>
+Learn how to read candles and understand
+the information price action gives you.
+</p>
+
+<a class="lesson-btn" href="lesson-candles.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 04
+</div>
+
+<h3>
+Market Structure
+</h3>
+
+<p>
+Learn how markets form trends, swings,
+breaks and important structural movements.
+</p>
+
+<a class="lesson-btn" href="lesson-structure.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 05
+</div>
+
+<h3>
+Key Levels
+</h3>
+
+<p>
+Understand important support, resistance
+and price levels used during analysis.
+</p>
+
+<a class="lesson-btn" href="lesson-levels.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 06
+</div>
+
+<h3>
+Trade Entries
+</h3>
+
+<p>
+Study the principles behind planning and
+identifying structured trade entries.
+</p>
+
+<a class="lesson-btn" href="lesson-entries.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 07
+</div>
+
+<h3>
+Risk Management
+</h3>
+
+<p>
+Learn how to protect trading capital and
+understand position sizing and risk.
+</p>
+
+<a class="lesson-btn" href="lesson-risk.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 08
+</div>
+
+<h3>
+Trading Psychology
+</h3>
+
+<p>
+Understand discipline, emotions, patience
+and the mental side of trading.
+</p>
+
+<a class="lesson-btn" href="lesson-psychology.html">
+Open Lesson
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+LESSON 09
+</div>
+
+<h3>
+Chart Marking
+</h3>
+
+<p>
+Practice identifying important market
+features directly on trading charts.
+</p>
+
+<a class="lesson-btn" href="lesson-chart-marking.html">
+Open Lesson
+</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 10</div>
+<h3>Why Traders Stay Unprofitable</h3>
+<p>Understand why traders can spend years in the market without becoming consistently profitable.</p>
+<a class="lesson-btn" href="lesson-professional-01.html">Open Lesson</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 11</div>
+<h3>Build One Trading Model</h3>
+<p>Turn your knowledge into one repeatable trading setup with clear rules.</p>
+<a class="lesson-btn" href="lesson-professional-02.html">Open Lesson</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 12</div>
+<h3>Liquidity & Market Structure</h3>
+<p>Connect liquidity, HH, HL, LH, LL, BOS and CHOCH into one practical process.</p>
+<a class="lesson-btn" href="lesson-professional-03.html">Open Lesson</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 13</div>
+<h3>Real Candlestick Setups</h3>
+<p>Study rejection, engulfing, displacement and confirmation using practical chart examples.</p>
+<a class="lesson-btn" href="lesson-professional-04.html">Open Lesson</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 14</div>
+<h3>Risk, R:R & Position Size</h3>
+<p>Learn how risk, stop-loss placement, position sizing and reward-to-risk work together.</p>
+<a class="lesson-btn" href="lesson-professional-05.html">Open Lesson</a>
+</div>
+
+<div class="card">
+<div class="number">LESSON 15</div>
+<h3>The 50-Trade Audit</h3>
+<p>Use your own trading data to measure your edge and discover the mistakes holding you back.</p>
+<a class="lesson-btn" href="lesson-professional-06.html">Open Lesson</a>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+Forex Academy © 2026
+</p>
+
+<p style="margin-top:7px;">
+Founded by <strong>Immanuel</strong>
+</p>
+
+</footer>
+
+
+</body>
+</html>

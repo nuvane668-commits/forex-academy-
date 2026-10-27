@@ -83,10 +83,178 @@ text-align:center;
 padding:30px;
 color:#666
 }
+
+/* UNIVERSAL ACADEMY THEMES */
+
+.theme-switcher{
+    position:fixed;
+    top:14px;
+    right:15px;
+    z-index:9999;
+    display:flex;
+    gap:6px;
+    padding:5px;
+    border-radius:30px;
+    background:rgba(7,16,24,.92);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+
+.theme-switcher button{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+    cursor:pointer;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.theme-switcher .light{
+    background:#fff;
+    color:#071018;
+}
+
+.theme-switcher .dark{
+    background:#071018;
+    color:#fff;
+}
+
+.theme-switcher .gold{
+    background:#f5c542;
+    color:#071018;
+}
+
+/* DARK */
+
+body.theme-dark{
+    background:#071018 !important;
+    color:#fff !important;
+}
+
+body.theme-dark header{
+    background:#08131c !important;
+}
+
+body.theme-dark section,
+body.theme-dark main{
+    background:transparent !important;
+}
+
+body.theme-dark p{
+    color:#aebbc4 !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4{
+    color:#fff !important;
+}
+
+/* LIGHT */
+
+body.theme-light{
+    background:#f5f7f9 !important;
+    color:#071018 !important;
+}
+
+body.theme-light header{
+    background:#fff !important;
+    border-color:rgba(7,16,24,.12) !important;
+}
+
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light h3,
+body.theme-light h4{
+    color:#071018 !important;
+}
+
+body.theme-light p{
+    color:#52616b !important;
+}
+
+/* GOLD */
+
+body.theme-gold{
+    background:#fff8df !important;
+    color:#071018 !important;
+}
+
+body.theme-gold header{
+    background:#fff8df !important;
+    border-color:rgba(120,90,0,.18) !important;
+}
+
+body.theme-gold h1,
+body.theme-gold h2,
+body.theme-gold h3,
+body.theme-gold h4{
+    color:#071018 !important;
+}
+
+body.theme-gold p{
+    color:#5f5637 !important;
+}
+
+/* Automatically recolor common white lesson cards */
+
+body.theme-dark .card,
+body.theme-dark .lesson-card,
+body.theme-dark .content-card,
+body.theme-dark .info-card,
+body.theme-dark .example,
+body.theme-dark .box{
+    background:#0d1b25 !important;
+    color:#fff !important;
+    border-color:rgba(255,255,255,.08) !important;
+}
+
+body.theme-light .card,
+body.theme-light .lesson-card,
+body.theme-light .content-card,
+body.theme-light .info-card,
+body.theme-light .example,
+body.theme-light .box{
+    background:#fff !important;
+    color:#071018 !important;
+}
+
+body.theme-gold .card,
+body.theme-gold .lesson-card,
+body.theme-gold .content-card,
+body.theme-gold .info-card,
+body.theme-gold .example,
+body.theme-gold .box{
+    background:#fffdf3 !important;
+    color:#071018 !important;
+}
+
+@media(max-width:650px){
+    .theme-switcher{
+        top:10px;
+        right:8px;
+    }
+
+    .theme-switcher button{
+        width:27px;
+        height:27px;
+    }
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- UNIVERSAL THEME SWITCHER -->
+<div class="theme-switcher">
+<button class="light" onclick="setAcademyTheme('light')" aria-label="Light theme">☀</button>
+<button class="dark" onclick="setAcademyTheme('dark')" aria-label="Dark theme">●</button>
+<button class="gold" onclick="setAcademyTheme('gold')" aria-label="Gold theme">◆</button>
+</div>
+
 
 <header>
 <div class="nav">
@@ -147,5 +315,63 @@ Forex trading involves substantial risk. The examples on this website are for ed
 © 2026 Forex Academy
 </footer>
 
+
+<script>
+function setAcademyTheme(theme){
+    document.body.classList.remove("theme-light","theme-dark","theme-gold");
+    document.body.classList.add("theme-" + theme);
+    localStorage.setItem("forexAcademyTheme",theme);
+}
+
+(function(){
+    let theme = localStorage.getItem("forexAcademyTheme") || "dark";
+    setAcademyTheme(theme);
+})();
+</script>
+
 </body>
 </html>
+
+<style>
+/* DARK THEME FIX */
+body.theme-dark p,
+body.theme-dark li,
+body.theme-dark .description,
+body.theme-dark .intro,
+body.theme-dark .subtitle {
+    color:#c9d2d9 !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark strong {
+    color:#ffffff !important;
+}
+
+body.theme-dark .card,
+body.theme-dark .example,
+body.theme-dark .info,
+body.theme-dark .box,
+body.theme-dark article {
+    background:#0d1b25 !important;
+    color:#ffffff !important;
+    border-color:rgba(255,255,255,.08) !important;
+}
+
+body.theme-dark .term,
+body.theme-dark .number,
+body.theme-dark .highlight {
+    color:#f5c542 !important;
+}
+
+body.theme-dark a {
+    color:#f5c542 !important;
+}
+
+body.theme-dark footer {
+    background:#050c12 !important;
+    color:#8c9aa3 !important;
+}
+</style>

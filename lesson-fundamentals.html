@@ -2,148 +2,725 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fundamental Analysis | Forex Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forex Fundamentals | Forex Academy</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f4f6f8;
-color:#17202a;
-line-height:1.7
+    font-family:Arial,Helvetica,sans-serif;
+    background:#071018;
+    color:#fff;
+    line-height:1.6;
 }
 
 header{
-background:#101820;
-color:white;
-padding:18px
+    background:#08131c;
+    border-bottom:1px solid #1b2a34;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 .nav{
-max-width:900px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center
+    max-width:1100px;
+    margin:auto;
+    padding:17px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.nav a{
-color:white;
-text-decoration:none
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:19px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#f5c542;
+}
+
+.home{
+    color:#aebbc4;
+    text-decoration:none;
+    font-size:14px;
 }
 
 main{
-max-width:900px;
-margin:auto;
-padding:30px 18px
+    max-width:1050px;
+    margin:auto;
+    padding:40px 16px 70px;
+}
+
+.lesson-head{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.lesson-number{
+    color:#f5c542;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+}
+
+h1{
+    font-size:clamp(34px,6vw,55px);
+    margin:8px 0 12px;
+}
+
+.subtitle{
+    color:#aebbc4;
+    max-width:700px;
+    margin:auto;
 }
 
 article{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 3px 15px rgba(0,0,0,.07)
+    background:#0c1922;
+    border:1px solid #1b2a34;
+    border-radius:15px;
+    padding:25px;
 }
-
-h1{margin-top:0}
 
 h2{
-margin-top:30px
+    margin:30px 0 12px;
+    font-size:25px;
 }
 
-.box{
-background:#eef2f5;
-padding:18px;
-border-radius:8px;
-margin:18px 0
+h2:first-child{
+    margin-top:0;
+}
+
+p{
+    color:#b9c5cc;
+}
+
+ul{
+    color:#b9c5cc;
+    padding-left:22px;
+}
+
+li{
+    margin:7px 0;
+}
+
+/* CHART */
+
+.chart-wrap{
+    margin-top:28px;
+    background:#080f14;
+    border:1px solid #25343d;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.chart-top{
+    padding:14px 16px;
+    border-bottom:1px solid #1d2a32;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.pair{
+    font-weight:bold;
+}
+
+.timeframe{
+    color:#84939d;
+    font-size:12px;
+}
+
+.chart{
+    width:100%;
+    overflow-x:auto;
+}
+
+.chart svg{
+    width:100%;
+    min-width:700px;
+    height:auto;
+    display:block;
+}
+
+.chart-info{
+    padding:12px 16px;
+    border-top:1px solid #1d2a32;
+    color:#778891;
+    font-size:12px;
+}
+
+/* EXPLANATION */
+
+.info{
+    margin:25px 0;
+    padding:19px;
+    background:#101f2a;
+    border-left:4px solid #f5c542;
+    border-radius:8px;
+}
+
+.info strong{
+    color:#f5c542;
+}
+
+.factors{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+    margin-top:18px;
+}
+
+.factor{
+    background:#101f2a;
+    border:1px solid #1d303b;
+    border-radius:9px;
+    padding:17px;
+}
+
+.factor h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.factor p{
+    font-size:13px;
+    color:#899aa5;
 }
 
 .warning{
-background:#fff3cd;
-padding:18px;
-border-radius:8px;
-margin-top:25px
+    margin-top:30px;
+    padding:18px;
+    background:#211d12;
+    border:1px solid #4a4023;
+    border-radius:9px;
 }
 
-.back{
-display:inline-block;
-margin-top:25px;
-background:#172a3a;
-color:white;
-padding:12px 18px;
-border-radius:7px;
-text-decoration:none
+.warning strong{
+    color:#f5c542;
+}
+
+.check{
+    margin-top:30px;
+    background:#101f2a;
+    padding:20px;
+    border-radius:9px;
+}
+
+.check h3{
+    margin-bottom:10px;
+}
+
+.lesson-nav{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:30px;
+}
+
+.lesson-nav a{
+    color:white;
+    background:#152733;
+    text-decoration:none;
+    padding:12px 17px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.lesson-nav a:hover{
+    background:#f5c542;
+    color:#071018;
 }
 
 footer{
-text-align:center;
-padding:30px;
-color:#666
+    background:#050c12;
+    text-align:center;
+    padding:30px;
+    color:#73818b;
+    font-size:13px;
 }
+
+footer strong{
+    color:#f5c542;
+}
+
+@media(max-width:650px){
+
+    article{
+        padding:18px;
+    }
+
+    .lesson-nav{
+        flex-direction:column;
+    }
+
+    .lesson-nav a{
+        text-align:center;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="nav">
-<strong>Forex Academy</strong>
-<a href="index.html">Home</a>
+
+<a class="logo" href="index.html">
+Forex <span>Academy</span>
+</a>
+
+<a class="home" href="training.html">
+← Lessons
+</a>
+
 </div>
+
 </header>
+
 
 <main>
 
+<div class="lesson-head">
+
+<div class="lesson-number">
+LESSON 01
+</div>
+
+<h1>
+Fundamental Analysis
+</h1>
+
+<p class="subtitle">
+Learn how economic conditions, interest rates and major
+announcements can influence forex markets.
+</p>
+
+</div>
+
+
 <article>
 
-<h1>Fundamental Analysis</h1>
+
+<h2>
+What Is Fundamental Analysis?
+</h2>
+
+<p>
+Fundamental analysis looks at economic and financial information
+that can influence the value of a currency. Traders study the
+economy behind the currency rather than relying only on the price chart.
+</p>
 
 
-<p>Fundamental analysis studies economic and financial factors that can influence currencies.</p>
+<div class="info">
 
-<h2>Important economic factors</h2>
+<strong>Think of it this way:</strong>
+
+<p>
+The chart shows you <b>what price is doing</b>.
+Fundamental analysis helps you study some of the
+economic factors that may influence <b>why market conditions change</b>.
+</p>
+
+</div>
+
+
+<h2>
+Important Economic Factors
+</h2>
+
+
+<div class="factors">
+
+<div class="factor">
+<h3>Interest Rates</h3>
+<p>Central-bank decisions and expectations can influence currency demand.</p>
+</div>
+
+<div class="factor">
+<h3>Inflation</h3>
+<p>Inflation data can affect expectations about future monetary policy.</p>
+</div>
+
+<div class="factor">
+<h3>Employment</h3>
+<p>Employment reports can provide information about economic conditions.</p>
+</div>
+
+<div class="factor">
+<h3>Economic Growth</h3>
+<p>Growth data can change expectations about an economy.</p>
+</div>
+
+<div class="factor">
+<h3>Government Policy</h3>
+<p>Policy decisions can influence economic expectations and sentiment.</p>
+</div>
+
+<div class="factor">
+<h3>Geopolitical Events</h3>
+<p>Major events can create uncertainty and changing market conditions.</p>
+</div>
+
+</div>
+
+
+<h2>
+See How Price Can React
+</h2>
+
+<p>
+The chart below is an <b>educational example</b>. It shows how
+price may become much more volatile around an important
+economic announcement.
+</p>
+
+
+<div class="chart-wrap">
+
+<div class="chart-top">
+
+<div class="pair">
+EUR/USD
+</div>
+
+<div class="timeframe">
+15 MIN
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<svg viewBox="0 0 1000 520">
+
+<!-- BACKGROUND -->
+
+<rect width="1000" height="520" fill="#080f14"/>
+
+
+<!-- GRID -->
+
+<g stroke="#18262f" stroke-width="1">
+
+<line x1="70" y1="70" x2="940" y2="70"/>
+<line x1="70" y1="130" x2="940" y2="130"/>
+<line x1="70" y1="190" x2="940" y2="190"/>
+<line x1="70" y1="250" x2="940" y2="250"/>
+<line x1="70" y1="310" x2="940" y2="310"/>
+<line x1="70" y1="370" x2="940" y2="370"/>
+<line x1="70" y1="430" x2="940" y2="430"/>
+
+<line x1="150" y1="45" x2="150" y2="450"/>
+<line x1="250" y1="45" x2="250" y2="450"/>
+<line x1="350" y1="45" x2="350" y2="450"/>
+<line x1="450" y1="45" x2="450" y2="450"/>
+<line x1="550" y1="45" x2="550" y2="450"/>
+<line x1="650" y1="45" x2="650" y2="450"/>
+<line x1="750" y1="45" x2="750" y2="450"/>
+<line x1="850" y1="45" x2="850" y2="450"/>
+
+</g>
+
+
+<!-- PRICE LABELS -->
+
+<g fill="#657780" font-size="12">
+
+<text x="10" y="74">1.0950</text>
+<text x="10" y="134">1.0935</text>
+<text x="10" y="194">1.0920</text>
+<text x="10" y="254">1.0905</text>
+<text x="10" y="314">1.0890</text>
+<text x="10" y="374">1.0875</text>
+<text x="10" y="434">1.0860</text>
+
+</g>
+
+
+<!-- ANNOUNCEMENT LINE -->
+
+<line
+x1="530"
+y1="45"
+x2="530"
+y2="450"
+stroke="#f5c542"
+stroke-width="2"
+stroke-dasharray="7 6"
+/>
+
+<text
+x="530"
+y="28"
+fill="#f5c542"
+font-size="13"
+text-anchor="middle"
+font-weight="bold">
+
+ECONOMIC NEWS
+
+</text>
+
+
+<!-- CANDLESTICKS -->
+
+<!-- 1 -->
+
+<line x1="100" y1="260" x2="100" y2="330" stroke="#dce5ea" stroke-width="2"/>
+<rect x="91" y="275" width="18" height="35" fill="#28c76f"/>
+
+<!-- 2 -->
+
+<line x1="140" y1="245" x2="140" y2="305" stroke="#dce5ea" stroke-width="2"/>
+<rect x="131" y="255" width="18" height="30" fill="#28c76f"/>
+
+<!-- 3 -->
+
+<line x1="180" y1="230" x2="180" y2="290" stroke="#dce5ea" stroke-width="2"/>
+<rect x="171" y="240" width="18" height="32" fill="#28c76f"/>
+
+<!-- 4 -->
+
+<line x1="220" y1="250" x2="220" y2="320" stroke="#dce5ea" stroke-width="2"/>
+<rect x="211" y="265" width="18" height="30" fill="#ef5350"/>
+
+<!-- 5 -->
+
+<line x1="260" y1="235" x2="260" y2="300" stroke="#dce5ea" stroke-width="2"/>
+<rect x="251" y="245" width="18" height="35" fill="#28c76f"/>
+
+<!-- 6 -->
+
+<line x1="300" y1="215" x2="300" y2="275" stroke="#dce5ea" stroke-width="2"/>
+<rect x="291" y="225" width="18" height="32" fill="#28c76f"/>
+
+<!-- 7 -->
+
+<line x1="340" y1="225" x2="340" y2="285" stroke="#dce5ea" stroke-width="2"/>
+<rect x="331" y="235" width="18" height="30" fill="#ef5350"/>
+
+<!-- 8 -->
+
+<line x1="380" y1="205" x2="380" y2="265" stroke="#dce5ea" stroke-width="2"/>
+<rect x="371" y="215" width="18" height="34" fill="#28c76f"/>
+
+<!-- 9 -->
+
+<line x1="420" y1="195" x2="420" y2="255" stroke="#dce5ea" stroke-width="2"/>
+<rect x="411" y="205" width="18" height="30" fill="#28c76f"/>
+
+<!-- 10 -->
+
+<line x1="460" y1="210" x2="460" y2="275" stroke="#dce5ea" stroke-width="2"/>
+<rect x="451" y="225" width="18" height="30" fill="#ef5350"/>
+
+<!-- 11 -->
+
+<line x1="500" y1="190" x2="500" y2="250" stroke="#dce5ea" stroke-width="2"/>
+<rect x="491" y="200" width="18" height="35" fill="#28c76f"/>
+
+
+<!-- BIG NEWS CANDLE -->
+
+<line x1="540" y1="105" x2="540" y2="280" stroke="#dce5ea" stroke-width="3"/>
+<rect x="528" y="125" width="24" height="115" fill="#28c76f"/>
+
+
+<!-- VOLATILITY AFTER NEWS -->
+
+<line x1="580" y1="85" x2="580" y2="190" stroke="#dce5ea" stroke-width="2"/>
+<rect x="570" y="105" width="20" height="65" fill="#ef5350"/>
+
+<line x1="620" y1="70" x2="620" y2="175" stroke="#dce5ea" stroke-width="2"/>
+<rect x="610" y="85" width="20" height="70" fill="#28c76f"/>
+
+<line x1="660" y1="55" x2="660" y2="145" stroke="#dce5ea" stroke-width="2"/>
+<rect x="650" y="70" width="20" height="55" fill="#28c76f"/>
+
+<line x1="700" y1="80" x2="700" y2="175" stroke="#dce5ea" stroke-width="2"/>
+<rect x="690" y="95" width="20" height="55" fill="#ef5350"/>
+
+<line x1="740" y1="60" x2="740" y2="150" stroke="#dce5ea" stroke-width="2"/>
+<rect x="730" y="75" width="20" height="50" fill="#28c76f"/>
+
+<line x1="780" y1="50" x2="780" y2="125" stroke="#dce5ea" stroke-width="2"/>
+<rect x="770" y="65" width="20" height="40" fill="#28c76f"/>
+
+<line x1="820" y1="65" x2="820" y2="145" stroke="#dce5ea" stroke-width="2"/>
+<rect x="810" y="80" width="20" height="45" fill="#ef5350"/>
+
+<line x1="860" y1="55" x2="860" y2="125" stroke="#dce5ea" stroke-width="2"/>
+<rect x="850" y="65" width="20" height="38" fill="#28c76f"/>
+
+
+<!-- ARROW -->
+
+<line
+x1="540"
+y1="295"
+x2="540"
+y2="250"
+stroke="#f5c542"
+stroke-width="3"/>
+
+<polygon
+points="540,245 532,258 548,258"
+fill="#f5c542"/>
+
+
+<text
+x="570"
+y="310"
+fill="#f5c542"
+font-size="14"
+font-weight="bold">
+
+Price movement after announcement
+
+</text>
+
+
+<!-- TIME -->
+
+<g fill="#657780" font-size="11">
+
+<text x="90" y="480">09:00</text>
+<text x="290" y="480">10:00</text>
+<text x="490" y="480">11:00</text>
+<text x="690" y="480">12:00</text>
+<text x="850" y="480">13:00</text>
+
+</g>
+
+</svg>
+
+</div>
+
+
+<div class="chart-info">
+
+Educational example • Candlesticks show hypothetical price movement
+around a major economic announcement.
+
+</div>
+
+</div>
+
+
+<h2>
+How to Read This Chart
+</h2>
+
+<p>
+Each candle represents a period of price movement. The candle body
+shows where price opened and closed, while the wick shows the
+higher and lower prices reached during that period.
+</p>
+
+<div class="info">
+
+<strong>Notice the difference:</strong>
+
+<p>
+Before the announcement, price is moving relatively gradually.
+Around the announcement, the example shows a much larger candle
+and faster movement. This demonstrates why important economic
+events can create changing trading conditions.
+</p>
+
+</div>
+
+
+<h2>
+The Beginner's Habit
+</h2>
+
+<p>
+Before analyzing a currency pair, check whether important economic
+events are scheduled for the currencies involved. Knowing the
+economic calendar can help you understand when volatility may
+increase.
+</p>
+
+
+<div class="check">
+
+<h3>
+Knowledge Check
+</h3>
 
 <ul>
-<li>Central-bank interest rates</li>
-<li>Inflation</li>
-<li>Employment data</li>
-<li>Economic growth</li>
-<li>Government policy</li>
-<li>Geopolitical developments</li>
-<li>Market expectations</li>
+
+<li>What does fundamental analysis study?</li>
+
+<li>Name three economic factors that can influence currencies.</li>
+
+<li>Why can an economic announcement cause increased volatility?</li>
+
+<li>What information does a candlestick show?</li>
+
 </ul>
 
-<h2>Interest rates</h2>
-<p>Changes in interest-rate expectations can influence demand for currencies because they can affect the attractiveness of assets denominated in that currency.</p>
-
-<h2>Economic news</h2>
-<p>Major announcements can produce rapid price movements and changing trading conditions.</p>
-
-<div class="box">
-<strong>Beginner habit:</strong> Before trading, know whether major economic events are scheduled for the currencies you are analyzing.
 </div>
 
 
 <div class="warning">
-<strong>⚠️ Educational warning</strong>
+
+<strong>Educational warning</strong>
+
 <p>
-Forex trading involves substantial risk. The examples on this website are for educational purposes and are not guaranteed trading signals or personalized financial advice.
+Forex trading involves substantial risk. This lesson is for education
+only and does not provide guaranteed trading signals or personalized
+financial advice.
 </p>
+
 </div>
 
-<a class="back" href="index.html">
-← Back to Lessons
+
+<div class="lesson-nav">
+
+<a href="training.html">
+← All Lessons
 </a>
+
+<a href="lesson-pairs.html">
+Next Lesson →
+</a>
+
+</div>
+
 
 </article>
 
 </main>
 
+
 <footer>
-© 2026 Forex Academy
+
+<p>
+Forex Academy © 2026
+</p>
+
+<p style="margin-top:7px;">
+Founded by <strong>Immanuel</strong>
+</p>
+
 </footer>
 
 </body>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Market Structure | Forex Academy</title>
 
 <style>
@@ -10,79 +11,446 @@
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
-background:#f4f6f8;
-color:#17202a;
-line-height:1.7
+font-family:Arial,Helvetica,sans-serif;
+background:#071018;
+color:#fff;
+line-height:1.65
 }
 
 header{
-background:#101820;
-color:white;
-padding:18px
+background:#08131c;
+border-bottom:1px solid #1d2b34;
+position:sticky;
+top:0;
+z-index:10
 }
 
 .nav{
-max-width:900px;
+max-width:1050px;
 margin:auto;
+padding:16px 18px;
 display:flex;
 justify-content:space-between;
 align-items:center
 }
 
-.nav a{
-color:white;
-text-decoration:none
+.logo{
+color:#fff;
+text-decoration:none;
+font-size:20px;
+font-weight:800
+}
+
+.logo span{
+color:#f5c542
+}
+
+.home{
+color:#aebbc4;
+text-decoration:none;
+font-size:14px
 }
 
 main{
-max-width:900px;
+max-width:1050px;
 margin:auto;
-padding:30px 18px
+padding:40px 16px 70px
+}
+
+.hero{
+text-align:center;
+margin-bottom:30px
+}
+
+.number{
+color:#f5c542;
+font-size:12px;
+font-weight:bold;
+letter-spacing:1.5px
+}
+
+h1{
+font-size:clamp(34px,6vw,54px);
+line-height:1.1;
+margin:8px 0 12px
+}
+
+.subtitle{
+color:#9eabb4;
+max-width:700px;
+margin:auto
 }
 
 article{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 3px 15px rgba(0,0,0,.07)
+background:#0c1922;
+border:1px solid #1b2b35;
+border-radius:15px;
+padding:25px
 }
-
-h1{margin-top:0}
 
 h2{
-margin-top:30px
+font-size:25px;
+margin:32px 0 12px
 }
 
-.box{
-background:#eef2f5;
+h2:first-child{
+margin-top:0
+}
+
+p{
+color:#b8c4ca
+}
+
+.intro{
+background:#101f2a;
+border-left:4px solid #f5c542;
 padding:18px;
 border-radius:8px;
-margin:18px 0
+margin:22px 0
+}
+
+.intro strong{
+color:#f5c542
+}
+
+/* CHART */
+
+.chart-wrap{
+margin-top:25px;
+background:#070d12;
+border:1px solid #26353e;
+border-radius:12px;
+overflow:hidden
+}
+
+.chart-head{
+padding:14px 16px;
+border-bottom:1px solid #1d2a32;
+display:flex;
+justify-content:space-between
+}
+
+.pair{
+font-weight:bold
+}
+
+.tf{
+font-size:12px;
+color:#84939d
+}
+
+.chart{
+overflow-x:auto
+}
+
+.chart svg{
+display:block;
+width:100%;
+min-width:760px;
+height:auto
+}
+
+.legend{
+padding:15px;
+border-top:1px solid #1d2a32;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+font-size:12px;
+color:#9aa8b0
+}
+
+.legend span{
+display:flex;
+align-items:center;
+gap:5px
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+display:inline-block
+}
+
+.yellow{background:#f5c542}
+.green{background:#28c76f}
+.red{background:#ef5350}
+.blue{background:#5b9cff}
+
+/* CONCEPTS */
+
+.concepts{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:14px;
+margin-top:18px
+}
+
+.card{
+background:#101f2a;
+border:1px solid #1d303a;
+border-radius:9px;
+padding:18px
+}
+
+.card h3{
+margin:0 0 7px
+}
+
+.card p{
+font-size:14px;
+color:#8f9da5
+}
+
+.term{
+color:#f5c542;
+font-weight:bold
+}
+
+.steps{
+margin-top:20px;
+counter-reset:step
+}
+
+.step{
+display:flex;
+gap:15px;
+margin:17px 0
+}
+
+.step-num{
+min-width:32px;
+height:32px;
+border-radius:50%;
+background:#f5c542;
+color:#071018;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.step p{
+margin:0
+}
+
+.check{
+margin-top:30px;
+background:#101f2a;
+border-radius:10px;
+padding:20px
+}
+
+.check li{
+margin:8px 0;
+color:#b8c4ca
 }
 
 .warning{
-background:#fff3cd;
+margin-top:30px;
 padding:18px;
-border-radius:8px;
-margin-top:25px
+background:#211d12;
+border:1px solid #4b4125;
+border-radius:9px
 }
 
-.back{
-display:inline-block;
-margin-top:25px;
-background:#172a3a;
-color:white;
-padding:12px 18px;
-border-radius:7px;
-text-decoration:none
+.warning strong{
+color:#f5c542
+}
+
+.lesson-nav{
+display:flex;
+justify-content:space-between;
+gap:12px;
+margin-top:30px
+}
+
+.lesson-nav a{
+background:#152733;
+color:#fff;
+padding:12px 17px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px
+}
+
+.lesson-nav a:hover{
+background:#f5c542;
+color:#071018
 }
 
 footer{
+background:#050c12;
 text-align:center;
 padding:30px;
-color:#666
+color:#71808a;
+font-size:13px
 }
+
+footer strong{
+color:#f5c542
+}
+
+@media(max-width:650px){
+
+article{
+padding:18px
+}
+
+.lesson-nav{
+flex-direction:column
+}
+
+.lesson-nav a{
+text-align:center
+}
+
+}
+
+/* ACADEMY THEME SYSTEM */
+
+body{
+    transition:background .25s,color .25s;
+}
+
+.theme-controls{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    margin-left:15px;
+}
+
+.theme-btn{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+.theme-light{background:#fff;color:#071018}
+.theme-dark{background:#071018;color:#fff}
+.theme-gold{background:#f5c542;color:#071018}
+
+/* LIGHT */
+
+body.light-theme{
+    background:#f5f7f9 !important;
+    color:#071018 !important;
+}
+
+body.light-theme header{
+    background:#ffffff !important;
+    border-color:rgba(7,16,24,.12) !important;
+}
+
+body.light-theme .card,
+body.light-theme .chart-card,
+body.light-theme .lesson-card{
+    background:#ffffff !important;
+    color:#071018 !important;
+}
+
+body.light-theme p{
+    color:#52616b !important;
+}
+
+/* GOLD */
+
+body.gold-theme{
+    background:#fff8df !important;
+    color:#071018 !important;
+}
+
+body.gold-theme header{
+    background:#fff8df !important;
+    border-color:rgba(120,90,0,.18) !important;
+}
+
+body.gold-theme .card,
+body.gold-theme .chart-card,
+body.gold-theme .lesson-card{
+    background:#fffdf3 !important;
+    color:#071018 !important;
+}
+
+body.gold-theme p{
+    color:#5f5637 !important;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+    .theme-controls{
+        margin-left:7px;
+        gap:4px;
+    }
+
+    .theme-btn{
+        width:27px;
+        height:27px;
+    }
+}
+
+
+/* PRACTICAL MARKET STRUCTURE CHART */
+.practical-chart-section{
+    margin-top:60px;
+}
+
+.practical-chart{
+    margin-top:30px;
+    background:#071018;
+    border:1px solid #203541;
+    border-radius:18px;
+    padding:12px;
+    overflow:hidden;
+}
+
+.practical-chart svg{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.section-intro{
+    color:#aebbc4;
+    line-height:1.8;
+}
+
+.chart-key{
+    margin-top:25px;
+    padding:24px;
+    background:#0b1b24;
+    border:1px solid #203541;
+    border-radius:16px;
+    line-height:1.8;
+}
+
+.chart-key ol{
+    padding-left:22px;
+}
+
+.chart-key li{
+    margin:10px 0;
+}
+
+.important-note{
+    margin-top:20px;
+    padding:18px;
+    border-left:4px solid #f5c542;
+    background:#111d24;
+    border-radius:10px;
+    color:#c4cdd2;
+    line-height:1.7;
+}
+
 </style>
 </head>
 
@@ -90,57 +458,901 @@ color:#666
 
 <header>
 <div class="nav">
-<strong>Forex Academy</strong>
-<a href="index.html">Home</a>
+<div class="theme-controls">
+<button class="theme-btn theme-light" onclick="setTheme('light')" aria-label="Light theme">☀</button>
+<button class="theme-btn theme-dark" onclick="setTheme('dark')" aria-label="Dark theme">●</button>
+<button class="theme-btn theme-gold" onclick="setTheme('gold')" aria-label="Gold theme">◆</button>
+</div>
+
+
+<a class="logo" href="index.html">
+Forex <span>Academy</span>
+</a>
+
+<a class="home" href="training.html">
+← Lessons
+</a>
+
 </div>
 </header>
 
+
 <main>
 
-<article>
+<div class="hero">
+
+<div class="number">LESSON 02</div>
 
 <h1>Market Structure</h1>
 
+<p class="subtitle">
+Learn how price creates highs and lows, how structure changes,
+and how traders identify BOS and CHOCH.
+</p>
 
-<p>Market structure describes how price forms highs and lows.</p>
-
-<div class="box">
-<strong>Uptrend:</strong> higher highs and higher lows.<br><br>
-<strong>Downtrend:</strong> lower highs and lower lows.<br><br>
-<strong>Range:</strong> price moves between relatively defined areas without a sustained directional trend.
 </div>
 
-<h2>Why structure matters</h2>
-<p>Understanding structure helps a trader describe what price is doing instead of simply guessing whether it will rise or fall.</p>
 
-<h2>Break of structure</h2>
-<p>When price moves beyond an important previous high or low, it may provide information about changing market conditions. However, a break does not automatically mean a trade should be entered.</p>
+<article>
 
-<h2>Multiple timeframes</h2>
-<p>A trader may use a higher timeframe to understand broader context and a lower timeframe to study a possible setup.</p>
+<h2>What Is Market Structure?</h2>
 
-<h2>Beginner exercise</h2>
-<p>Look at a chart and mark the most recent significant highs and lows. Ask: Is price making higher highs, lower lows, or moving sideways?</p>
+<p>
+Market structure is the way price moves through a series of
+highs and lows. By studying these swings, a trader can describe
+whether the market is generally moving upward, downward, or
+changing direction.
+</p>
+
+
+<div class="intro">
+
+<strong>Simple idea:</strong>
+
+<p>
+Don't look at every candle separately. Step back and look at
+the important highs and lows that price is creating.
+</p>
+
+</div>
+
+
+<h2>Study the Chart</h2>
+
+<div class="chart-wrap">
+
+<div class="chart-head">
+
+<div class="pair">EUR/USD • Educational Example</div>
+
+<div class="tf">15 MIN</div>
+
+</div>
+
+
+<div class="chart">
+
+<svg viewBox="0 0 1000 560">
+
+<rect width="1000" height="560" fill="#070d12"/>
+
+
+<!-- GRID -->
+
+<g stroke="#18262f" stroke-width="1">
+
+<line x1="70" y1="70" x2="940" y2="70"/>
+<line x1="70" y1="140" x2="940" y2="140"/>
+<line x1="70" y1="210" x2="940" y2="210"/>
+<line x1="70" y1="280" x2="940" y2="280"/>
+<line x1="70" y1="350" x2="940" y2="350"/>
+<line x1="70" y1="420" x2="940" y2="420"/>
+
+</g>
+
+
+<!-- PRICE LEVELS -->
+
+<g fill="#687984" font-size="12">
+
+<text x="12" y="74">1.0950</text>
+<text x="12" y="144">1.0935</text>
+<text x="12" y="214">1.0920</text>
+<text x="12" y="284">1.0905</text>
+<text x="12" y="354">1.0890</text>
+<text x="12" y="424">1.0875</text>
+
+</g>
+
+
+<!-- CANDLE 1 -->
+
+<line x1="100" y1="390" x2="100" y2="470"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="91" y="405" width="18" height="42"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 2 -->
+
+<line x1="140" y1="350" x2="140" y2="430"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="131" y="365" width="18" height="45"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 3 -->
+
+<line x1="180" y1="330" x2="180" y2="400"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="171" y="345" width="18" height="38"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 4 -->
+
+<line x1="220" y1="345" x2="220" y2="415"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="211" y="360" width="18" height="40"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 5 -->
+
+<line x1="260" y1="300" x2="260" y2="390"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="251" y="315" width="18" height="60"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 6 -->
+
+<line x1="300" y1="275" x2="300" y2="345"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="291" y="290" width="18" height="38"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 7 -->
+
+<line x1="340" y1="300" x2="340" y2="370"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="331" y="315" width="18" height="40"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 8 -->
+
+<line x1="380" y1="250" x2="380" y2="335"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="371" y="265" width="18" height="55"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 9 -->
+
+<line x1="420" y1="225" x2="420" y2="295"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="411" y="240" width="18" height="38"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 10 -->
+
+<line x1="460" y1="245" x2="460" y2="310"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="451" y="255" width="18" height="35"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 11 -->
+
+<line x1="500" y1="205" x2="500" y2="285"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="491" y="220" width="18" height="50"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 12 -->
+
+<line x1="540" y1="175" x2="540" y2="240"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="531" y="190" width="18" height="35"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 13 -->
+
+<line x1="580" y1="195" x2="580" y2="270"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="571" y="210" width="18" height="42"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 14 -->
+
+<line x1="620" y1="150" x2="620" y2="235"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="611" y="165" width="18" height="55"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 15 -->
+
+<line x1="660" y1="125" x2="660" y2="195"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="651" y="140" width="18" height="38"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 16 -->
+
+<line x1="700" y1="155" x2="700" y2="225"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="691" y="170" width="18" height="38"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 17 -->
+
+<line x1="740" y1="105" x2="740" y2="185"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="731" y="120" width="18" height="48"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 18 -->
+
+<line x1="780" y1="80" x2="780" y2="150"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="771" y="95" width="18" height="38"
+fill="#28c76f"/>
+
+
+<!-- CANDLE 19 -->
+
+<line x1="820" y1="100" x2="820" y2="180"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="811" y="115" width="18" height="42"
+fill="#ef5350"/>
+
+
+<!-- CANDLE 20 -->
+
+<line x1="860" y1="65" x2="860" y2="145"
+stroke="#d8e0e5" stroke-width="2"/>
+<rect x="851" y="80" width="18" height="52"
+fill="#28c76f"/>
+
+
+<!-- SWING HIGH LABEL -->
+
+<circle cx="300" cy="275" r="5" fill="#f5c542"/>
+
+<line x1="300" y1="270" x2="300" y2="235"
+stroke="#f5c542" stroke-width="2"/>
+
+<text x="300" y="220"
+fill="#f5c542"
+font-size="15"
+text-anchor="middle"
+font-weight="bold">
+
+HH
+
+</text>
+
+
+<!-- HIGHER HIGH -->
+
+<circle cx="540" cy="175" r="5" fill="#f5c542"/>
+
+<line x1="540" y1="170" x2="540" y2="135"
+stroke="#f5c542" stroke-width="2"/>
+
+<text x="540" y="120"
+fill="#f5c542"
+font-size="15"
+text-anchor="middle"
+font-weight="bold">
+
+HH
+
+</text>
+
+
+<!-- HIGHER HIGH 2 -->
+
+<circle cx="780" cy="80" r="5" fill="#f5c542"/>
+
+<line x1="780" y1="75" x2="780" y2="45"
+stroke="#f5c542" stroke-width="2"/>
+
+<text x="780" y="34"
+fill="#f5c542"
+font-size="15"
+text-anchor="middle"
+font-weight="bold">
+
+HH
+
+</text>
+
+
+<!-- HIGHER LOW 1 -->
+
+<circle cx="220" cy="415" r="5" fill="#5b9cff"/>
+
+<line x1="220" y1="420" x2="220" y2="455"
+stroke="#5b9cff" stroke-width="2"/>
+
+<text x="220" y="475"
+fill="#5b9cff"
+font-size="15"
+text-anchor="middle"
+font-weight="bold">
+
+HL
+
+</text>
+
+
+<!-- HIGHER LOW 2 -->
+
+<circle cx="340" cy="370" r="5" fill="#5b9cff"/>
+
+<line x1="340" y1="375" x2="340" y2="410"
+stroke="#5b9cff" stroke-width="2"/>
+
+<text x="340" y="430"
+fill="#5b9cff"
+font-size="15"
+text-anchor="middle"
+font-weight="bold">
+
+HL
+
+</text>
+
+
+<!-- BOS -->
+
+<line x1="300" y1="275" x2="500" y2="275"
+stroke="#f5c542"
+stroke-width="2"
+stroke-dasharray="8 6"/>
+
+<text x="405" y="260"
+fill="#f5c542"
+font-size="16"
+font-weight="bold"
+text-anchor="middle">
+
+BOS — Break of Structure
+
+</text>
+
+
+<!-- SECOND BOS -->
+
+<line x1="540" y1="175" x2="740" y2="175"
+stroke="#f5c542"
+stroke-width="2"
+stroke-dasharray="8 6"/>
+
+<text x="640" y="160"
+fill="#f5c542"
+font-size="16"
+font-weight="bold"
+text-anchor="middle">
+
+BOS
+
+</text>
+
+
+<!-- TREND ARROW -->
+
+<line x1="150" y1="440"
+x2="820" y2="95"
+stroke="#28c76f"
+stroke-width="2"
+stroke-dasharray="5 7"
+opacity=".35"/>
+
+<text x="120" y="500"
+fill="#28c76f"
+font-size="14"
+font-weight="bold">
+
+Higher highs + higher lows = bullish structure
+
+</text>
+
+
+<!-- AXIS -->
+
+<text x="450" y="540"
+fill="#667780"
+font-size="12"
+text-anchor="middle">
+
+TIME
+
+</text>
+
+</svg>
+
+</div>
+
+
+<div class="legend">
+
+<span><i class="dot yellow"></i> Structure / BOS</span>
+
+<span><i class="dot blue"></i> Higher Low</span>
+
+<span><i class="dot green"></i> Bullish candle</span>
+
+<span><i class="dot red"></i> Bearish candle</span>
+
+</div>
+
+</div>
+
+
+<h2>
+What Are HH and HL?
+</h2>
+
+<div class="concepts">
+
+<div class="card">
+
+<h3><span class="term">HH</span> — Higher High</h3>
+
+<p>
+A new swing high that forms above the previous important
+swing high.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3><span class="term">HL</span> — Higher Low</h3>
+
+<p>
+A pullback that stops above the previous important swing low.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3><span class="term">LH</span> — Lower High</h3>
+
+<p>
+A swing high that forms below the previous important swing high.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3><span class="term">LL</span> — Lower Low</h3>
+
+<p>
+A new swing low that forms below the previous important swing low.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+Understanding BOS
+</h2>
+
+<p>
+BOS means <b>Break of Structure</b>. In this educational example,
+price moves upward and breaks above a previous significant swing
+high. That break is marked on the chart as BOS.
+</p>
+
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-num">1</div>
+
+<p>
+Price creates a swing high.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">2</div>
+
+<p>
+Price pulls back and forms a higher low.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">3</div>
+
+<p>
+Price moves upward again and breaks the previous swing high.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">4</div>
+
+<p>
+That break is identified as a possible <b>break of structure</b>.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+Why Structure Matters
+</h2>
+
+<p>
+Understanding structure helps a trader avoid looking at isolated
+candles without context. Instead, the trader can ask whether price
+is consistently creating higher highs and higher lows, or lower
+highs and lower lows.
+</p>
+
+
+<div class="intro">
+
+<strong>Important:</strong>
+
+<p>
+A BOS is not automatically a trading signal. Traders may use
+additional information such as liquidity, displacement, order
+blocks, fair value gaps, risk management and higher-timeframe
+context before considering a setup.
+</p>
+
+</div>
+
+
+<div class="check">
+
+<h3>Knowledge Check</h3>
+
+<ul>
+
+<li>What does HH mean?</li>
+
+<li>What does HL mean?</li>
+
+<li>What is a BOS?</li>
+
+<li>Can you identify the HH and HL points on the chart?</li>
+
+<li>Does every candle breaking a previous candle's high automatically mean a BOS?</li>
+
+</ul>
+
+</div>
 
 
 <div class="warning">
-<strong>⚠️ Educational warning</strong>
+
+<strong>Educational warning</strong>
+
 <p>
-Forex trading involves substantial risk. The examples on this website are for educational purposes and are not guaranteed trading signals or personalized financial advice.
+Forex trading involves substantial risk. This website is for
+educational purposes only. Nothing here is a guaranteed trading
+signal or personalized financial advice.
 </p>
+
 </div>
 
-<a class="back" href="index.html">
-← Back to Lessons
+
+<div class="lesson-nav">
+
+<a href="training.html">
+← All Lessons
 </a>
+
+<a href="lesson-candles.html">
+Next: Candlesticks →
+</a>
+
+</div>
+
+
+
+<section class="practical-chart-section">
+<h2>Practical Market Structure Chart</h2>
+
+<p class="section-intro">
+This chart shows how traders can identify market structure and combine
+BOS, CHOCH, liquidity, Order Blocks and Fair Value Gaps in a practical setup.
+</p>
+
+<div class="practical-chart">
+<svg viewBox="0 0 1000 700" width="100%" role="img"
+aria-label="Practical forex market structure chart showing HH, HL, BOS, CHOCH, liquidity, order block, fair value gap, entry, stop loss and take profit">
+
+<!-- chart background -->
+<rect x="0" y="0" width="1000" height="700" rx="18" fill="#071018"/>
+
+<!-- grid -->
+<g stroke="#19303b" stroke-width="1">
+<line x1="70" y1="100" x2="950" y2="100"/>
+<line x1="70" y1="200" x2="950" y2="200"/>
+<line x1="70" y1="300" x2="950" y2="300"/>
+<line x1="70" y1="400" x2="950" y2="400"/>
+<line x1="70" y1="500" x2="950" y2="500"/>
+<line x1="70" y1="600" x2="950" y2="600"/>
+
+<line x1="150" y1="60" x2="150" y2="630"/>
+<line x1="250" y1="60" x2="250" y2="630"/>
+<line x1="350" y1="60" x2="350" y2="630"/>
+<line x1="450" y1="60" x2="450" y2="630"/>
+<line x1="550" y1="60" x2="550" y2="630"/>
+<line x1="650" y1="60" x2="650" y2="630"/>
+<line x1="750" y1="60" x2="750" y2="630"/>
+<line x1="850" y1="60" x2="850" y2="630"/>
+</g>
+
+<!-- premium / discount -->
+<rect x="70" y="70" width="880" height="280" fill="#5b2630" opacity=".18"/>
+<rect x="70" y="350" width="880" height="280" fill="#17633d" opacity=".15"/>
+
+<text x="850" y="95" fill="#f5c542" font-size="18" text-anchor="middle">PREMIUM</text>
+<text x="850" y="610" fill="#35c47a" font-size="18" text-anchor="middle">DISCOUNT</text>
+
+<!-- equilibrium -->
+<line x1="70" y1="350" x2="950" y2="350"
+stroke="#f5c542" stroke-dasharray="8 8"/>
+<text x="85" y="342" fill="#f5c542" font-size="15">50% EQUILIBRIUM</text>
+
+<!-- liquidity -->
+<line x1="365" y1="190" x2="610" y2="190"
+stroke="#f5c542" stroke-width="3" stroke-dasharray="7 7"/>
+<text x="485" y="175" fill="#f5c542" font-size="18" text-anchor="middle">BUY-SIDE LIQUIDITY</text>
+
+<!-- bearish liquidity -->
+<line x1="365" y1="500" x2="610" y2="500"
+stroke="#f5c542" stroke-width="3" stroke-dasharray="7 7"/>
+<text x="485" y="525" fill="#f5c542" font-size="18" text-anchor="middle">SELL-SIDE LIQUIDITY</text>
+
+<!-- FVG -->
+<rect x="600" y="285" width="120" height="105"
+fill="#4169e1" opacity=".35" stroke="#6f91ff" stroke-width="2"/>
+<text x="660" y="340" fill="#ffffff" font-size="20" text-anchor="middle">FVG</text>
+<text x="660" y="363" fill="#b9c7ff" font-size="14" text-anchor="middle">Fair Value Gap</text>
+
+<!-- bullish OB -->
+<rect x="665" y="390" width="135" height="75"
+fill="#20a765" opacity=".35" stroke="#35c47a" stroke-width="2"/>
+<text x="732" y="425" fill="#ffffff" font-size="18" text-anchor="middle">BULLISH OB</text>
+<text x="732" y="447" fill="#b9ffd9" font-size="13" text-anchor="middle">Order Block</text>
+
+<!-- candles -->
+<g stroke-width="3">
+
+<!-- 1 -->
+<line x1="110" y1="530" x2="110" y2="590" stroke="#b8c2c9"/>
+<rect x="98" y="545" width="24" height="35" fill="#28c276"/>
+
+<!-- 2 -->
+<line x1="155" y1="475" x2="155" y2="550" stroke="#b8c2c9"/>
+<rect x="143" y="490" width="24" height="45" fill="#28c276"/>
+
+<!-- 3 -->
+<line x1="200" y1="420" x2="200" y2="505" stroke="#b8c2c9"/>
+<rect x="188" y="435" width="24" height="55" fill="#28c276"/>
+
+<!-- 4 pullback -->
+<line x1="245" y1="410" x2="245" y2="485" stroke="#b8c2c9"/>
+<rect x="233" y="425" width="24" height="40" fill="#ef5350"/>
+
+<!-- 5 -->
+<line x1="290" y1="350" x2="290" y2="445" stroke="#b8c2c9"/>
+<rect x="278" y="365" width="24" height="65" fill="#28c276"/>
+
+<!-- 6 -->
+<line x1="335" y1="300" x2="335" y2="380" stroke="#b8c2c9"/>
+<rect x="323" y="315" width="24" height="50" fill="#28c276"/>
+
+<!-- 7 pullback -->
+<line x1="380" y1="290" x2="380" y2="365" stroke="#b8c2c9"/>
+<rect x="368" y="305" width="24" height="42" fill="#ef5350"/>
+
+<!-- 8 -->
+<line x1="425" y1="245" x2="425" y2="330" stroke="#b8c2c9"/>
+<rect x="413" y="260" width="24" height="55" fill="#28c276"/>
+
+<!-- 9 -->
+<line x1="470" y1="205" x2="470" y2="275" stroke="#b8c2c9"/>
+<rect x="458" y="220" width="24" height="45" fill="#28c276"/>
+
+<!-- 10 -->
+<line x1="515" y1="165" x2="515" y2="235" stroke="#b8c2c9"/>
+<rect x="503" y="180" width="24" height="45" fill="#28c276"/>
+
+<!-- 11 -->
+<line x1="560" y1="155" x2="560" y2="235" stroke="#b8c2c9"/>
+<rect x="548" y="175" width="24" height="38" fill="#ef5350"/>
+
+<!-- 12 liquidity sweep -->
+<line x1="605" y1="185" x2="605" y2="410" stroke="#b8c2c9"/>
+<rect x="593" y="210" width="24" height="160" fill="#ef5350"/>
+
+<!-- 13 displacement -->
+<line x1="650" y1="350" x2="650" y2="475" stroke="#b8c2c9"/>
+<rect x="638" y="360" width="24" height="105" fill="#28c276"/>
+
+<!-- 14 -->
+<line x1="695" y1="300" x2="695" y2="410" stroke="#b8c2c9"/>
+<rect x="683" y="315" width="24" height="75" fill="#28c276"/>
+
+<!-- 15 retrace -->
+<line x1="740" y1="360" x2="740" y2="445" stroke="#b8c2c9"/>
+<rect x="728" y="375" width="24" height="45" fill="#ef5350"/>
+
+<!-- 16 -->
+<line x1="785" y1="315" x2="785" y2="400" stroke="#b8c2c9"/>
+<rect x="773" y="330" width="24" height="55" fill="#28c276"/>
+
+<!-- 17 -->
+<line x1="830" y1="260" x2="830" y2="345" stroke="#b8c2c9"/>
+<rect x="818" y="275" width="24" height="60" fill="#28c276"/>
+
+<!-- 18 -->
+<line x1="875" y1="200" x2="875" y2="290" stroke="#b8c2c9"/>
+<rect x="863" y="215" width="24" height="65" fill="#28c276"/>
+
+<!-- 19 -->
+<line x1="920" y1="135" x2="920" y2="230" stroke="#b8c2c9"/>
+<rect x="908" y="150" width="24" height="70" fill="#28c276"/>
+
+</g>
+
+<!-- HH / HL labels -->
+<g font-size="18" font-weight="bold">
+<text x="200" y="400" fill="#f5c542" text-anchor="middle">HH</text>
+<text x="245" y="495" fill="#4d9cff" text-anchor="middle">HL</text>
+
+<text x="335" y="285" fill="#f5c542" text-anchor="middle">HH</text>
+<text x="380" y="385" fill="#4d9cff" text-anchor="middle">HL</text>
+
+<text x="470" y="190" fill="#f5c542" text-anchor="middle">HH</text>
+<text x="515" y="150" fill="#f5c542" text-anchor="middle">HH</text>
+</g>
+
+<!-- BOS -->
+<line x1="335" y1="315" x2="335" y2="265"
+stroke="#f5c542" stroke-width="3"/>
+<text x="350" y="255" fill="#f5c542" font-size="22" font-weight="bold">BOS</text>
+<text x="350" y="278" fill="#f5c542" font-size="14">Break of Structure</text>
+
+<!-- liquidity sweep -->
+<circle cx="605" cy="190" r="8" fill="#f5c542"/>
+<line x1="605" y1="190" x2="605" y2="125"
+stroke="#f5c542" stroke-width="2"/>
+<text x="625" y="115" fill="#f5c542" font-size="18" font-weight="bold">LIQUIDITY SWEEP</text>
+
+<!-- CHOCH -->
+<line x1="650" y1="360" x2="650" y2="300"
+stroke="#ff7b7b" stroke-width="3"/>
+<text x="670" y="290" fill="#ff7b7b" font-size="22" font-weight="bold">CHOCH</text>
+<text x="670" y="313" fill="#ffb1b1" font-size="14">Change of Character</text>
+
+<!-- entry -->
+<line x1="800" y1="390" x2="930" y2="390"
+stroke="#35c47a" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="815" y="380" fill="#35c47a" font-size="19" font-weight="bold">ENTRY</text>
+
+<!-- stop loss -->
+<line x1="800" y1="465" x2="930" y2="465"
+stroke="#ef5350" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="815" y="490" fill="#ef5350" font-size="18" font-weight="bold">STOP LOSS</text>
+
+<!-- take profit -->
+<line x1="800" y1="150" x2="930" y2="150"
+stroke="#35c47a" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="815" y="135" fill="#35c47a" font-size="18" font-weight="bold">TAKE PROFIT</text>
+
+<!-- risk reward arrow -->
+<line x1="955" y1="390" x2="955" y2="150"
+stroke="#ffffff" stroke-width="2"/>
+<text x="970" y="275" fill="#ffffff" font-size="15" transform="rotate(90 970 275)">RISK / REWARD</text>
+
+<!-- chart title -->
+<text x="70" y="40" fill="#ffffff" font-size="23" font-weight="bold">
+EUR/USD • PRACTICAL MARKET STRUCTURE
+</text>
+
+</svg>
+</div>
+
+<div class="chart-key">
+<strong>How to read the setup:</strong>
+<ol>
+<li>Price creates <strong>HH → HL → HH</strong>, showing bullish structure.</li>
+<li>A previous high is broken — this is the <strong>BOS</strong>.</li>
+<li>Price takes liquidity before making a strong displacement.</li>
+<li>The displacement leaves an <strong>FVG</strong>.</li>
+<li>The final bearish candle before the bullish displacement is treated as the <strong>Bullish Order Block</strong>.</li>
+<li>Price retraces into the OB/FVG area.</li>
+<li>A trader may look for confirmation before entering.</li>
+<li>The stop loss belongs beyond the invalidation area, while the target can be placed near a previous high/liquidity area.</li>
+</ol>
+</div>
+
+<div class="important-note">
+<strong>Important:</strong> This is an educational example, not a guaranteed trade signal.
+The exact identification of BOS, CHOCH, liquidity, OB and FVG depends on the
+timeframe and the trader's rules.
+</div>
+</section>
 
 </article>
 
 </main>
 
+
 <footer>
-© 2026 Forex Academy
+
+<p>Forex Academy © 2026</p>
+
+<p style="margin-top:7px;">
+Founded by <strong>Immanuel</strong>
+</p>
+
 </footer>
+
+
+<script>
+function setTheme(theme){
+    document.body.classList.remove("light-theme","gold-theme");
+
+    if(theme === "light"){
+        document.body.classList.add("light-theme");
+    }
+
+    if(theme === "gold"){
+        document.body.classList.add("gold-theme");
+    }
+
+    localStorage.setItem("forexAcademyTheme", theme);
+}
+
+(function(){
+    const saved = localStorage.getItem("forexAcademyTheme");
+    if(saved){
+        setTheme(saved);
+    }
+})();
+</script>
 
 </body>
 </html>
